@@ -1,35 +1,50 @@
-// * DEPENDS 
-import React, {useEffect} from 'react';
-import Display from './Components/Display';
-// * CSS 
-import './App.css';
+// * DEPENDS
+import React, { useEffect } from "react";
+import Display from "./Components/Display";
+// * CSS
+import "./App.css";
 
 // * MODS
-const Hydra = require('hydra-synth');
-
+const Hydra = require("hydra-synth");
 
 function App() {
   // creating background
-  var texture = document.createElement("canvas")
-  texture.setAttribute("class","texture")
-  texture.setAttribute("id","txtr_main")
+  var texture = document.createElement("canvas");
+  texture.setAttribute("class", "texture");
+  texture.setAttribute("id", "txtr_main");
 
-  // init module 
+  // init module
   const createHydra = (context) => {
     const hydra = new Hydra({
       detectAudio: false,
       canvas: texture,
-      makeGlobal: false
-    }).synth
-    hydra.gradient(1).out()
-  }
+      makeGlobal: false,
+    }).synth;
+    hydra.setResolution(1920,1080)
+    hydra.bpm = 142
+    hydra.gradient(0.1)
+    // .mult(
+    //   hydra.gradient(() => Math.cos(hydra.time)/4)
+    //   .colorama(() => Math.sin(hydra.time)/4)
+    // )
+    // .diff(
+    //   hydra.osc(10,.25,() => Math.cos(hydra.time)/8)
+    // )  
+    // .rotate(() => (hydra.time%360)/16)   
+    // .diff(hydra.shape(4, .4).repeat(() => hydra.mouse.x/10, () => hydra.mouse.y/10))
+    // .rotate(() => (hydra.time%360)/8) 
+    .out(hydra.o0)
+  };
 
+  // .colorama(1).color(0,() => Math.sin(hydra.time),.45).colorama(.01).colorama(.01).colorama(.01).colorama(.01)
+  // .mult(hydra.shape(4,() => Math.sin(hydra.time/2)).repeat(1,10))
+  //.color(0,() => Math.sin(hydra.time),() => Math.cos(hydra.time/2))
   // add the module output after DOM rendering
   useEffect(() => {
-    createHydra()
-    const A = document.getElementById("App")
-    A.insertBefore(texture, A.childNodes[0])
-  },[texture])
+    createHydra();
+    const A = document.getElementById("App");
+    A.insertBefore(texture, A.childNodes[0]);
+  }, [texture]);
 
   return (
     <div id="App" className="App">

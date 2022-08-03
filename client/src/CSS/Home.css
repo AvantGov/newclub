@@ -1,0 +1,23 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Home__container {
+    height: 100%;
+    width: 94%;
+    margin: 2% 0 2% 0;
+}
+
+.container__header {
+    font-weight: 1000;
+    font-size: 4rem;
+    line-height: 4.25rem;
+}
+
+.container__copy {
+    line-height: 2.25rem;
+    margin: 2% 0 2% 0;
+}

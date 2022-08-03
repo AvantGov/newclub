@@ -1,10 +1,26 @@
 .Display {
     position: absolute;
-    top: 10%;
-    bottom: 10%;
-    left: 15%;
-    right: 15%;
-    height: 80%;
-    width: 70%;
-    background-color: #FFFFFF;
-  }
+    top: 7%;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+    height: 88%;
+    width: 80%;
+    background-color: #1c2424;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    overflow-y: scroll;
+    font-family: 'Courier New', Courier, monospace;    
+    font-size: 2rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.Display::-webkit-scrollbar {
+display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.Display {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
