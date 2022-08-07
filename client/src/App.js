@@ -23,16 +23,21 @@ function App() {
     hydra.setResolution(1920,1080)
     hydra.bpm = 142
     hydra.gradient(0.1)
-    // .mult(
-    //   hydra.gradient(() => Math.cos(hydra.time)/4)
-    //   .colorama(() => Math.sin(hydra.time)/4)
-    // )
-    // .diff(
-    //   hydra.osc(10,.25,() => Math.cos(hydra.time)/8)
-    // )  
-    // .rotate(() => (hydra.time%360)/16)   
-    // .diff(hydra.shape(4, .4).repeat(() => hydra.mouse.x/10, () => hydra.mouse.y/10))
-    // .rotate(() => (hydra.time%360)/8) 
+    .color(0,1,2)
+    .scrollX(0, () => Math.sin(hydra.bpm)*0.05 )
+    .scrollY(0, () => Math.sin(hydra.bpm)*-0.07 )
+    .pixelate(10,8)
+    .scale(0.15)
+    .modulate(hydra.noise(1,0.25))
+    .mult(
+      hydra.gradient(() => Math.cos(hydra.bpm)/4)
+      .color(0,.5,1.5)
+      .colorama(() => Math.sin(hydra.bpm)/4)
+    )
+    .diff(
+      hydra.osc(10,.25,() => Math.cos(hydra.bpm)/8)
+    )  
+    .diff(hydra.shape(4, .4).repeat(() => hydra.mouse.x/10, () => hydra.mouse.y/10).rotate(() => (hydra.time%360)/8) )
     .out(hydra.o0)
   };
 
