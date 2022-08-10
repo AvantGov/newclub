@@ -37,7 +37,11 @@ function App() {
     .diff(
       hydra.osc(10,.25,() => Math.cos(hydra.bpm)/8)
     )  
-    .diff(hydra.shape(4, .4).repeat(() => hydra.mouse.x/10, () => hydra.mouse.y/10).rotate(() => (hydra.time%360)/8) )
+    // .diff( 
+    //   hydra.shape(4, .4)
+    //     .repeat(() => hydra.mouse.x/10, () => hydra.mouse.y/10)
+    //     .rotate(() => (hydra.time%360)/8) 
+    //   )
     .out(hydra.o0)
   };
 
