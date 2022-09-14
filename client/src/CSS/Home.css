@@ -1,0 +1,49 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Home__container {
+    height: 100%;
+    width: 94%;
+    margin: 2% 0 2% 0;
+}
+
+.container__header {
+    font-weight: 1000;
+    font-size: 4rem;
+    line-height: 4.25rem;
+}
+
+.container__copy {
+    line-height: 3.25rem;
+    font-size: 2.5rem;
+    margin: 2% 0 2% 0;
+}
+
+li {
+    line-height: 3rem;
+    font-size: 2.5rem;  
+    margin-bottom: 2%;
+}
+
+ul > :first-child {
+    margin-top: 1.5%;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.copy_link {
+    text-decoration: underline;
+    color: #FFFFFF;
+    font-weight: 600;
+    transition: .2s ease-in-out;
+}
+
+.copy_link:hover {
+    color: #eeaeca;
+}
