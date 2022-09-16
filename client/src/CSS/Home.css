@@ -47,3 +47,12 @@ ul > :first-child {
 .copy_link:hover {
     color: #eeaeca;
 }
+
+@media only screen and (max-width: 700px) {
+    .container__copy {
+        font-size: 1.6rem;
+    }
+    li {
+        font-size: 1.6rem;
+    }
+}
