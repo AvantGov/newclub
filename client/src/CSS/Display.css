@@ -16,11 +16,17 @@
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .Display::-webkit-scrollbar {
-display: none;
+    display: none;
 }
   
 /* Hide scrollbar for IE, Edge and Firefox */
 .Display {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@media only screen and (max-width: 700px) {
+    .Display {
+        padding: 2% 2% 2% 2%;
+    }
 }
